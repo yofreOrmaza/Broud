@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OFF-2R Your roadmap, Your file</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="author" content="Yofre Ormaza Ortiz" />
+</head>
+<body>
+  <header>
+    <h1>OFF-2R</h1>
+  </header>
+
+  <main>
+        <!-- Contenedor para el siguiente paso -->
+    <section id="next-step-container">
+        <h3>Next step</h3>
+        <div id="next-step">
+        <!-- Aquí se mostrará el emoji y el texto del siguiente paso -->
+        <div id="next-step-emoji"></div>
+        <div id="next-step-text"></div>
+        </div>
+    </section>
+
+
+    <!-- Botones para gestionar el archivo JSON -->
+    <section id="file-section">
+        <h2>Your Roadmap, Your File.</h2>
+        <button id="download-btn">Download Roadmap</button>
+        <input type="file" id="upload-input" accept=".json" />
+        <button id="upload-btn">Load Roadmap</button>
+    </section>
+    <!-- Formulario para agregar nuevos pasos -->
+    <section id="form-section">
+      <h2>Add New Step</h2>
+      <!-- Formulario para agregar nuevos pasos -->
+      <form id="step-form">
+        <input type="text" id="step-name" placeholder="What's your next step?" required>
+        <input type="text" id="step-emoji" placeholder="Emoji (ej. 🌟 🎯)" maxlength="2" required>
+        <button type="submit">Add Step</button>
+      </form>
+    </section>
+
+    <!-- Contenedor de la ruta -->
+    <section id="route-container">
+      <h2>Roadmap</h2>
+      <div id="route"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 OFF-2R</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+  }
+  
+  header {
+    background-color: #4635B1;
+    color: white;
+    padding: 1rem;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+  
+  #form-section {
+    margin-bottom: 2rem;
+  }
+  
+  #step-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  #step-form input {
+    padding: 0.5rem;
+    width: 200px;
+  }
+  
+  #step-form button {
+    padding: 0.5rem 1rem;
+    background-color: #4635B1;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #step-form button:hover {
+    background-color: #342883;
+  }
+  
+  /* Diseño de la ruta */
+  #route-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #route {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .circle {
+    width: 50px;
+    height: 50px;
+    background-color: #9281ff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .circle.completed {
+    background-color: #4635B1;
+  }
+  
+  .line {
+    width: 2px;
+    height: 50px;
+    background-color: #ccc;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    #route {
+      flex-direction: row;
+    }
+  
+    .line {
+      width: 50px;
+      height: 2px;
+      top: 25px;
+      left: 50px;
+      transform: translateY(-50%);
+    }
+  }
+
+  #file-section {
+    margin-top: 2rem;
+  }
+  
+  #file-section button,
+  #file-section input {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  #file-section input[type="file"] {
+    width: auto;
+  }
+
+
+  /* Estilo para el contenedor del siguiente paso */
+#next-step-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 200px;
+  }
+  
+  #next-step-container h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #4635B1;
+  }
+  
+  #next-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  #next-step-emoji {
+    font-size: 2rem;
+  }
+  
+  #next-step-text {
+    font-size: 0.9rem;
+    color: #555;
+  }
