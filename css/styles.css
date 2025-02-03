@@ -57,6 +57,10 @@ header {
   main {
     padding: 1rem;
   }
+
+  main #file-section h2 .linea1, main #file-section h2 .linea2 {
+    display: inline; /* Mostrar ambas líneas en la misma línea por defecto */
+  }
   
   #form-section {
     margin-bottom: 2rem;
@@ -145,6 +149,12 @@ header {
       width: 100%;
       max-width: 320px;
       margin: 0 auto;
+    }
+    #file-section h2 .line-1, #file-section h2 .line-2 {
+      display: block; /* Mostrar cada línea en una nueva línea */
+      font-size: 1.5rem; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+      line-height: 1.5; /* Espaciado entre líneas */
+      text-align: start;
     }
     #step-form {
       display: grid;
