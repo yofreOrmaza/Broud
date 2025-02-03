@@ -276,3 +276,7 @@
 .save-btn:active {
   transform: scale(0.98); /* Efecto de "presión" al hacer clic */
 }
+
+footer p {
+  margin-bottom: 5rem;
+}
