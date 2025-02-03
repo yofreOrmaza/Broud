@@ -10,7 +10,15 @@ function cargarDesdeLocalStorage() {
       renderizarRuta(); // Renderizar los datos en la interfaz
     } catch (error) {
       console.error('Error loading data from localStorage:', error);
-      alert('There was an error loading the data. The roadmap will be restarted.');
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "There was an error loading the data. The roadmap will be restarted.",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+      });
+      //alert('There was an error loading the data. The roadmap will be restarted.');
       ruta = [];
     }
   } else {
@@ -26,7 +34,15 @@ function guardarEnLocalStorage() {
     console.log('Data stored in localStorage:', ruta); // Depuración
   } catch (error) {
     console.error('Error saving data in localStorage:', error);
-    alert('There was an error saving the data. Please try again.');
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "There was an error saving the data. Please try again.",
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+    });
+    //alert('There was an error saving the data. Please try again.');
   }
 }
 
@@ -101,7 +117,15 @@ document.getElementById('upload-btn').addEventListener('click', function () {
   const file = fileInput.files[0];
 
   if (!file) {
-    alert('Please select a JSON file.');
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Please select a JSON file.",
+      timer: 1500,
+      showConfirmButton: false,
+      timerProgressBar: true,
+    });
+    //alert('Please select a JSON file.');
     return;
   }
 
@@ -111,9 +135,26 @@ document.getElementById('upload-btn').addEventListener('click', function () {
       ruta = JSON.parse(e.target.result);
       guardarEnLocalStorage(); // Sincronizar con localStorage
       renderizarRuta();
-      alert('Roadmap successfully loaded.');
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        //title: "...",
+        text: "Roadmap successfully loaded.",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: false,
+      });
+      //alert('Roadmap successfully loaded.');
     } catch (error) {
-      alert('Error loading the file. Make sure it is a valid JSON file.');
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Error loading the file. Make sure it is a valid JSON file.",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+      });
+      //alert('Error loading the file. Make sure it is a valid JSON file.');
     }
   };
   reader.readAsText(file);
@@ -294,7 +335,15 @@ function habilitarEdicionPaso(li, paso, index) {
       renderizarListaCompleta();
       mostrarSiguientePaso();
     } else {
-      alert('Please provide a valid name and emoji.');
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please provide a valid name and emoji.",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+      });
+      //alert('Please provide a valid name and emoji.');
     }
   }
 
