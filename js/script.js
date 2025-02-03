@@ -210,3 +210,26 @@ document.getElementById('toggle-step-list').addEventListener('click', function (
     renderizarListaCompleta(); // Renderizar la lista cuando se abre el desplegable
   }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Inicializar SortableJS
+  const stepListItems = document.getElementById('step-list-items');
+  const sortable = new Sortable(stepListItems, {
+    animation: 150,
+    onEnd: function (evt) {
+      const { oldIndex, newIndex } = evt;
+
+      // Reordenar la ruta en el arreglo
+      const movedStep = ruta.splice(oldIndex, 1)[0];
+      ruta.splice(newIndex, 0, movedStep);
+
+      // Guardar los cambios en localStorage
+      guardarEnLocalStorage();
+
+      // Actualizar la interfaz
+      renderizarRuta();
+      renderizarListaCompleta();
+      mostrarSiguientePaso();
+    }
+  });
+});

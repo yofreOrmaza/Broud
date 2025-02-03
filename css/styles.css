@@ -219,3 +219,9 @@
   text-decoration: line-through;
   color: #4635B1;
 }
+
+/* Estilo para el elemento que se está arrastrando */
+#step-list-items li.sortable-ghost {
+  opacity: 0.5;
+  background-color: #f0f0f0;
+}
