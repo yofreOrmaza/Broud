@@ -104,6 +104,20 @@
     }
   }
 
+  @media (min-width: 319px) and (max-width: 767px) {
+    main {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    #step-form {
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(3, auto);
+      align-items: center;
+    }
+  }
+
   #file-section {
     margin-top: 2rem;
   }
@@ -118,6 +132,9 @@
     width: auto;
   }
 
+  #form-section {
+    margin-top: 2rem;
+  }
 
   /* Estilo para el contenedor del siguiente paso */
 #next-step-container {
