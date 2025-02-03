@@ -153,3 +153,69 @@
     font-size: 0.9rem;
     color: #555;
   }
+
+  /* Estilo para el contenedor del desplegable */
+#step-list-container {
+  position: fixed;
+  bottom: 1rem; /* Distancia desde el borde inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Ancho máximo */
+  max-width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Botón para abrir/cerrar el desplegable */
+#toggle-step-list {
+  background-color: #4635B1;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 8px 8px 0 0;
+}
+
+#toggle-step-list:hover {
+  background-color: #342883;
+}
+
+/* Contenido del desplegable */
+#step-list {
+  display: none; /* Oculto por defecto */
+  padding: 1rem;
+}
+
+#step-list h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #4635B1;
+}
+
+/* Lista de pasos */
+#step-list-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px; /* Altura máxima del desplegable */
+  overflow-y: auto; /* Barra de desplazamiento si hay muchos pasos */
+}
+
+#step-list-items li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+#step-list-items li.completed {
+  text-decoration: line-through;
+  color: #4635B1;
+}

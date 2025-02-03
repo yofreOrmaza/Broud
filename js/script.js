@@ -176,3 +176,37 @@ document.getElementById('route').addEventListener('click', function (e) {
     renderizarRuta();
   }
 });
+
+// Renderizar la lista completa de pasos en el desplegable
+function renderizarListaCompleta() {
+  const stepListItems = document.getElementById('step-list-items');
+  stepListItems.innerHTML = ''; // Limpiar la lista antes de renderizar
+
+  ruta.forEach((paso, index) => {
+    const listItem = document.createElement('li');
+    if (paso.completado) listItem.classList.add('completed');
+
+    const emojiSpan = document.createElement('span');
+    emojiSpan.textContent = paso.emoji || '?';
+
+    const nameSpan = document.createElement('span');
+    nameSpan.textContent = paso.nombre;
+
+    listItem.appendChild(emojiSpan);
+    listItem.appendChild(nameSpan);
+    stepListItems.appendChild(listItem);
+  });
+}
+
+// Alternar la visibilidad del desplegable
+document.getElementById('toggle-step-list').addEventListener('click', function () {
+  const stepList = document.getElementById('step-list');
+  if (stepList.style.display === 'block') {
+    stepList.style.display = 'none';
+    this.textContent = 'View all the steps ▲';
+  } else {
+    stepList.style.display = 'block';
+    this.textContent = 'Hide Step List ▼';
+    renderizarListaCompleta(); // Renderizar la lista cuando se abre el desplegable
+  }
+});
