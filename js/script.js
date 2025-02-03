@@ -192,8 +192,26 @@ function renderizarListaCompleta() {
     const nameSpan = document.createElement('span');
     nameSpan.textContent = paso.nombre;
 
+    // Botón de eliminar
+    const deleteBtn = document.createElement('span');
+    deleteBtn.textContent = '❌';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.title = 'Remove step';
+
+    // Agregar evento para eliminar el paso
+    deleteBtn.addEventListener('click', function () {
+      if (confirm('Are you sure you want to eliminate this step?')) {
+        ruta.splice(index, 1); // Eliminar el paso del arreglo
+        guardarEnLocalStorage();
+        renderizarRuta();
+        renderizarListaCompleta();
+        mostrarSiguientePaso();
+      }
+    });
+
     listItem.appendChild(emojiSpan);
     listItem.appendChild(nameSpan);
+    listItem.appendChild(deleteBtn); // Agregar el botón de eliminar
     stepListItems.appendChild(listItem);
   });
 }
@@ -233,3 +251,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
