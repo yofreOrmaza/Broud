@@ -111,7 +111,7 @@
       margin: 0 auto;
     }
     header {
-      text-align: start; /*alineación para titulo de app en movil*/
+      /*text-align: start; alineación para titulo de app en movil*/
     }
     #step-form {
       display: grid;
