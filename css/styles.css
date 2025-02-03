@@ -110,6 +110,9 @@
       max-width: 320px;
       margin: 0 auto;
     }
+    header {
+      text-align: start; /*alineación para titulo de app en movil*/
+    }
     #step-form {
       display: grid;
       grid-template-columns: repeat(1, auto);
