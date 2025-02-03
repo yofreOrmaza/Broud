@@ -58,6 +58,10 @@ header {
     padding: 1rem;
   }
 
+  #next-step-container {
+    z-index: 999;
+  }
+
   main #file-section h2 .linea1, main #file-section h2 .linea2 {
     display: inline; /* Mostrar ambas líneas en la misma línea por defecto */
   }
