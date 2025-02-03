@@ -241,6 +241,35 @@ function renderizarListaCompleta() {
 
     // Agregar evento para eliminar el paso
     deleteBtn.addEventListener('click', function () {
+      Swal.fire({
+        //title: "Are you sure you want to eliminate this step?",
+        text: "Are you sure you want to eliminate this step?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#4635B1",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        // Si el usuario confirma la eliminación
+        if (result.isConfirmed) {
+          ruta.splice(index, 1); // Eliminar el paso del arreglo
+          guardarEnLocalStorage();
+          renderizarRuta();
+          renderizarListaCompleta();
+          mostrarSiguientePaso();
+
+          // Mostrar mensaje de éxito
+          Swal.fire({
+            //title: "Deleted!",
+            text: "Your step has been deleted.",
+            icon: "success"
+          });
+        }})
+      })
+    
+    
+    
+    /*deleteBtn.addEventListener('click', function () {
       if (confirm('Are you sure you want to eliminate this step?')) {
         ruta.splice(index, 1); // Eliminar el paso del arreglo
         guardarEnLocalStorage();
@@ -248,7 +277,7 @@ function renderizarListaCompleta() {
         renderizarListaCompleta();
         mostrarSiguientePaso();
       }
-    });
+    });*/
 
     listItem.appendChild(emojiSpan);
     listItem.appendChild(nameSpan);
