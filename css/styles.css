@@ -46,7 +46,7 @@
   }
   
   #step-form button:hover {
-    background-color: #342883;
+    background-color: #3a2a9c;
   }
   
   /* Diseño de la ruta */
@@ -182,7 +182,7 @@
 }
 
 #toggle-step-list:hover {
-  background-color: #342883;
+  background-color: #3a2a9c;
 }
 
 /* Contenido del desplegable */
@@ -237,4 +237,25 @@
 
 .delete-btn:hover {
   color: darkred;
+}
+
+/* Estilo para el botón "Guardar" */
+.save-btn {
+  background-color: #4635B1; /* Color principal */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Indicador de clic */
+  font-size: 0.9rem; /* Tamaño de fuente */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.save-btn:hover {
+  background-color: #3a2a9c; /* Color más oscuro al pasar el cursor */
+}
+
+.save-btn:active {
+  transform: scale(0.98); /* Efecto de "presión" al hacer clic */
 }

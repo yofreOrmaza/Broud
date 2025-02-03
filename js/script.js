@@ -252,3 +252,84 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// Función para habilitar la edición de un paso
+function habilitarEdicionPaso(li, paso, index) {
+  // Crear un contenedor temporal para los campos de edición
+  const inputEmoji = document.createElement('input');
+  inputEmoji.type = 'text';
+  inputEmoji.classList.add('editable');
+  inputEmoji.value = paso.emoji || '?';
+  inputEmoji.maxLength = 2; // Limitar a 2 caracteres para emojis
+
+  const inputNombre = document.createElement('input');
+  inputNombre.type = 'text';
+  inputNombre.classList.add('editable');
+  inputNombre.value = paso.nombre;
+
+  // Botón para guardar los cambios
+  const saveBtn = document.createElement('button');
+  saveBtn.textContent = 'Save';
+  saveBtn.classList.add('save-btn'); // Agregar la clase para estilizar
+  saveBtn.style.marginLeft = '0.5rem';
+
+  // Limpiar el contenido del elemento <li> y agregar los campos de edición
+  li.innerHTML = '';
+  li.appendChild(inputEmoji);
+  li.appendChild(inputNombre);
+  li.appendChild(saveBtn);
+
+  // Enfocar el campo de nombre
+  inputNombre.focus();
+
+  // Función para guardar los cambios
+  function guardarCambios() {
+    const nuevoNombre = inputNombre.value.trim();
+    const nuevoEmoji = inputEmoji.value.trim();
+
+    if (nuevoNombre && nuevoEmoji) {
+      ruta[index].nombre = nuevoNombre;
+      ruta[index].emoji = nuevoEmoji;
+      guardarEnLocalStorage();
+      renderizarRuta();
+      renderizarListaCompleta();
+      mostrarSiguientePaso();
+    } else {
+      alert('Please provide a valid name and emoji.');
+    }
+  }
+
+  // Guardar cambios al presionar "Enter" en cualquiera de los campos
+  inputNombre.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      guardarCambios();
+    }
+  });
+
+  inputEmoji.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      guardarCambios();
+    }
+  });
+
+  // Guardar cambios al hacer clic en el botón "Guardar"
+  saveBtn.addEventListener('click', guardarCambios);
+
+  // Cancelar edición si el usuario hace clic fuera del elemento <li>
+  li.addEventListener('blur', function () {
+    setTimeout(() => {
+      if (!li.contains(document.activeElement)) {
+        guardarCambios();
+      }
+    }, 0);
+  });
+}
+
+// Agregar eventos de doble clic a los elementos de la lista
+document.getElementById('step-list-items').addEventListener('dblclick', function (e) {
+  const li = e.target.closest('li');
+  if (li) {
+    const index = Array.from(li.parentNode.children).indexOf(li);
+    const paso = ruta[index];
+    habilitarEdicionPaso(li, paso, index);
+  }
+});
