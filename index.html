@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OFF-2R Your Way, Your Roadmap</title>
+  <!-- <link rel="manifest" href="/manifest.json" /> -->
+  <meta name="theme-color" content="#4635B1">
+  <link rel="icon" type="image/png" href="/data/img/favicon/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/data/img/favicon/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/data/img/favicon/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/data/img/favicon/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="OFF-2R" />
+  <link rel="manifest" href="/data/img/favicon/favicon/site.webmanifest" />
   <link rel="icon" type="image/x-icon" href="data\img\favicon\OFF2RFAVICON.jpg">
   <link rel="stylesheet" href="css/styles.css">
   <meta name="author" content="Yofre Ormaza Ortiz" />
@@ -73,5 +81,15 @@
   <script src="js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(() => console.log("Service Worker registrado"))
+          .catch((error) => console.error("Error al registrar:", error));
+      });
+    }
+  </script>
 </body>
 </html>
