@@ -6,20 +6,17 @@
     "background_color": "#ffffff",
     "theme_color": "#4635B1",
     "icons": [
-      {
-        "src": "data/img/iconsAPP/Android/OFF2RFAVICON-192x192.jpg",
-        "sizes": "192x192",
-        "type": "image/jpg"
-      },
-      {
-        "src": "data/img/iconsAPP/Android&Browser/OFF2RFAVICON-512x512.jpg",
-        "sizes": "512x512",
-        "type": "image/jpg"
-      },
-      {
-        "src": "data/img/iconsAPP/iOS/OFF2RFAVICON-180x180.jpg",
-        "sizes": "180x180",
-        "type": "image/jpg"
-      }
-    ]
-  }
+    {
+      "src": "/data/img/favicon/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/data/img/favicon/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
