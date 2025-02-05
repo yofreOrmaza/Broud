@@ -330,3 +330,7 @@ header {
 footer p {
   margin-bottom: 5rem;
 }
+
+main #form-section #step-form input:focus{
+  outline: none;
+} /* Estilizar input focus para formulario de agregar step */

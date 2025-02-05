@@ -57,7 +57,7 @@ function renderizarRuta() {
     const circle = document.createElement('div');
     circle.classList.add('circle');
     if (paso.completado) circle.classList.add('completed');
-    circle.textContent = paso.emoji || '?'; // Mostrar el emoji o un símbolo por defecto si no hay emoji
+    circle.textContent = paso.emoji || '🏆'; // Mostrar el emoji o un símbolo por defecto si no hay emoji
 
     // Agregar la línea conectora (excepto para el último paso)
     if (index < ruta.length - 1) {
