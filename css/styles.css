@@ -334,3 +334,24 @@ footer p {
 main #form-section #step-form input:focus{
   outline: none;
 } /* Estilizar input focus para formulario de agregar step */
+
+/* Botón para eliminar todo */
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea el contenido a la derecha */
+  margin-top: 1rem; /* Espaciado superior */
+}
+
+.delete-all-btn {
+  background-color: #d33; /* Rojo */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.delete-all-btn:hover {
+  background-color: #b71c1c; /* Rojo más oscuro */
+}
