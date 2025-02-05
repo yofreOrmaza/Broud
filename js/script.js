@@ -246,8 +246,8 @@ function renderizarListaCompleta() {
         text: "Are you sure you want to eliminate this step?",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#4635B1",
-        cancelButtonColor: "#d33",
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#4635B1",
         confirmButtonText: "Yes, delete it!"
       }).then((result) => {
         // Si el usuario confirma la eliminación
@@ -284,6 +284,47 @@ function renderizarListaCompleta() {
     listItem.appendChild(deleteBtn); // Agregar el botón de eliminar
     stepListItems.appendChild(listItem);
   });
+
+  // Agregar el botón para eliminar TODOS los pasos
+  const deleteAllButton = document.createElement('button');
+  deleteAllButton.textContent = 'Delete All Steps';
+  deleteAllButton.classList.add('delete-all-btn'); // Clase para estilizar
+
+  // Crear un contenedor para el botón y alinearlo a la derecha
+  const buttonContainer = document.createElement('div');
+  buttonContainer.classList.add('button-container'); // Clase para Flexbox
+  buttonContainer.appendChild(deleteAllButton);
+
+  // Agregar evento para eliminar todos los pasos
+  deleteAllButton.addEventListener('click', function () {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "This will delete ALL steps and cannot be undone!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#4635B1",
+      confirmButtonText: "Yes, delete all!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        ruta = []; // Vaciar el arreglo de pasos
+        guardarEnLocalStorage(); // Guardar el estado vacío en localStorage
+        renderizarRuta(); // Actualizar la interfaz
+        renderizarListaCompleta();
+        mostrarSiguientePaso();
+
+        // Mostrar mensaje de éxito
+        Swal.fire({
+          title: "Deleted!",
+          text: "All steps have been deleted.",
+          icon: "success"
+        });
+      }
+    });
+  });
+
+  // Agregar el botón al contenedor de la lista
+  stepListItems.appendChild(buttonContainer);
 }
 
 // Alternar la visibilidad del desplegable
