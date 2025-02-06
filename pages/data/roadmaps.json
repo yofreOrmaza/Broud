@@ -1,0 +1,17 @@
+[
+    {
+      "nombre": "English Exam A1",
+      "descripcion": "Un roadmap de preparación para A2",
+      "archivo": "/roadmapsJSONs/englishExamA1.json"
+    },
+    {
+      "nombre": "Ciencia de Datos",
+      "descripcion": "Un roadmap para iniciarse en ciencia de datos.",
+      "archivo": "data/data-science-roadmap.json"
+    },
+    {
+      "nombre": "Diseño UX/UI",
+      "descripcion": "Un roadmap para aprender diseño de interfaces.",
+      "archivo": "data/ux-ui-roadmap.json"
+    }
+  ]

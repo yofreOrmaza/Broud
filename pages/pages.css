@@ -1,0 +1,150 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+
+
+
+  /* Estilo del header */
+header {
+  display: flex;
+  justify-content: center; /* Centra el contenido principal */
+  align-items: center;
+  padding: 1rem;
+  background-color: #4635B1; /* Color del header */
+  color: white;
+  position: relative; /* Para posicionar el logo absolutamente */
+  height: 60px;
+  max-height: 60px;
+}
+
+/* Contenedor del contenido del header */
+#header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el título */
+  width: 100%; /* Ocupa todo el ancho del header */
+}
+
+/* Estilo del logo */
+#logo {
+  position: absolute; /* Posicionamiento absoluto para colocarlo en la izquierda */
+  left: 1rem; /* Espacio desde el borde izquierdo */
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%); /* Ajuste vertical */
+  width: 50px; /* Tamaño del logo */
+  height: auto;
+  opacity: 0; /* Inicialmente invisible */
+  transition: opacity 0.5s ease; /* Transición suave */
+}
+
+/* Estilo del título */
+#page-title {
+  font-size: 1.5rem;
+  margin: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+  
+main {
+    padding: 1rem;
+}
+  
+  /* Contenedor principal de los roadmaps */
+#roadmap-list {
+    display: grid;
+    gap: 1rem; /* Espacio entre las filas */
+  }
+  
+  /* Estilo de cada fila (roadmap) */
+  .roadmap-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Proporción de columnas */
+    align-items: center; /* Alinear verticalmente los elementos */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  
+  /*.roadmap-row:hover {
+  }*/
+  
+  /* Nombre del roadmap */
+  .roadmap-name {
+    font-size: 1rem; /* Fuente normal, no título */
+    font-weight: normal; /* Sin negrita */
+    color: #4635B1;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .roadmap-name:hover {
+    text-decoration: underline;
+  }
+  
+  /* Botones de acciones */
+  .actions {
+    display: flex;
+    gap: 0.5rem; /* Espacio entre los botones */
+  }
+  
+  .actions button {
+    background-color: #4635B1;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .actions button:hover {
+    background-color: #3a2b96;
+  }
+  
+  /* Fecha de actualización */
+  .info {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: right; /* Alinear a la derecha */
+  }  
+
+  /* Estilo para el contenedor del JSON */
+  #json-preview {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    overflow-x: auto; /* Habilitar desplazamiento horizontal si es necesario */
+  }
+  
+  /* Estilo para el código JSON */
+  #json-content {
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap; /* Mantener los saltos de línea */
+    word-break: break-word; /* Evitar que las líneas largas rompan el diseño */
+    color: #333;
+  }
+
+  @media (min-width: 319px) and (max-width: 767px) {
+    main {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+
+footer p {
+  margin-bottom: 5rem;
+}
