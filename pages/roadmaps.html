@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Broud | Roadmaps</title>
+  <link rel="manifest" href="../manifest.json" />
+  <meta name="theme-color" content="#4635B1">
+  <link rel="icon" type="image/png" href="../data/img/favicon/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../data/img/favicon/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="../data/img/favicon/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../data/img/favicon/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Broud" />
+  <!-- <link rel="manifest" href="/data/img/favicon/favicon/site.webmanifest" /> -->
+  <link rel="icon" type="image/x-icon" href="..\data\img\favicon\favicon\favicon.ico">
+  <link rel="stylesheet" href="/pages/pages.css">
+  <meta name="author" content="Yofre Ormaza Ortiz" />
+</head>
+<body>
+  <header id="header">
+    <div id="header-content">
+      <!-- Logo en la parte izquierda -->
+      <img id="logo" src="../data/img/favicon/favicon/web-app-manifest-192x192.png" alt="Logo" style="display: none;" />
+  
+      <!-- Título centrado -->
+      <h1 id="page-title">Broud</h1>
+    </div>
+  </header>
+
+  <main>
+    <a href="../index.html">Home</a>
+
+    <section id="roadmap-list">
+        <!-- Los roadmaps se cargarán aquí dinámicamente -->
+        <p>Cargando roadmaps...</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Broud</p>
+  </footer>
+
+  <script src="./js/pages.js"></script>
+  <script src="../js/headerAnimationIcon&TitleApp.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then((registration) => {
+            console.log("Service Worker registrado");
+
+            // Detectar actualizaciones del Service Worker
+            registration.addEventListener("updatefound", () => {
+              const newWorker = registration.installing;
+              newWorker.addEventListener("statechange", () => {
+                if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+                  if (confirm("Nueva versión disponible. ¿Actualizar ahora?")) {
+                    window.location.reload();
+                  }
+                }
+              });
+            });
+          })
+          .catch((error) => console.error("Error al registrar:", error));
+      });
+    }
+  </script>
+</body>
+</html>
