@@ -95,9 +95,29 @@ header {
   
   /* Diseño de la ruta */
   #route-container {
-    display: flex;
+    display: grid;
+    overflow-x: auto;
     flex-direction: column;
     align-items: center;
+  }
+
+    /* Personalización del scroll horizontal */
+  #route-container::-webkit-scrollbar {
+    height: 8px; /* Altura del scroll horizontal */
+  }
+
+  #route-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color del fondo del scroll */
+    border-radius: 4px; /* Bordes redondeados para el track */
+  }
+
+  #route-container::-webkit-scrollbar-thumb {
+    background: #4635B1; /* Color del thumb (el control deslizante) */
+    border-radius: 4px; /* Bordes redondeados para el thumb */
+  }
+
+  #route-container::-webkit-scrollbar-thumb:hover {
+    background: #3a2b96; /* Cambio de color al pasar el mouse */
   }
   
   #route {
@@ -135,8 +155,14 @@ header {
   
   /* Responsive Design */
   @media (min-width: 768px) {
+    #route-container {
+      display: grid;
+      padding: 0 0 1.5rem 0;
+    }
+
     #route {
       flex-direction: row;
+      justify-content: center;
     }
   
     .line {
@@ -153,6 +179,10 @@ header {
       width: 100%;
       max-width: 320px;
       margin: 0 auto;
+    }
+    #route-container {
+      display: flex;
+      padding-bottom: 2rem;
     }
     #file-section h2 .line-1, #file-section h2 .line-2 {
       display: block; /* Mostrar cada línea en una nueva línea */
