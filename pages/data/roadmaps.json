@@ -1,10 +1,5 @@
 [
     {
-      "nombre": "English Exam A1",
-      "descripcion": "Un roadmap de preparación para A2",
-      "archivo": "/roadmapsJSONs/englishExamA1.json"
-    },
-    {
       "nombre": "BroudAdmin x DeepSeek English A1",
       "descripcion": "...",
       "archivo": "/roadmapsJSONs/BroudxDeepseekEnglishA1.json"
