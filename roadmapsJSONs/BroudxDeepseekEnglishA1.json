@@ -1,0 +1,357 @@
+[
+    {
+      "nombre": "1. Basic Foundations",
+      "emoji": "🏆",
+      "completado": false
+    },
+    {
+      "nombre": "Greetings and introductions",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Verb 'to be'",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Present (am/is/are)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Past (was/were)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Pronouns",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Personal (I, you, he)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Object (me, him, her)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Possessive (my/mine, your/yours)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "2. Verb Tenses",
+      "emoji": "🏆",
+      "completado": false
+    },
+    {
+      "nombre": "Present Simple",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Affirmative, negative, questions (do/does)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Present Continuous",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Actions in progress and confirmed plans",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Future",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "'Going to' (plans/intentions)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "'Will' (spontaneous decisions)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Past Simple",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Regular/irregular verbs (worked/went)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Questions with 'did'",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Present Perfect (introduction)",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Experiences (I've been to Malaysia)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Recent actions (I've just started)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Use of 'for/since' (I've been here since August)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "3. Intermediate Grammar",
+      "emoji": "🏆",
+      "completado": false
+    },
+    {
+      "nombre": "Comparatives and Superlatives",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Longer than / The longest",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "How high/tall/deep?",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "There is/There are",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Affirmative, negative, and questions",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Modifiers",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Adverbs (really, extremely, pretty)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Participles and prepositions",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Quantifiers and frequency",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Most people, many families, a few stores",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Adverbs of frequency (always, never, hardly ever)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "4. Communication Skills",
+      "emoji": "🏆",
+      "completado": false
+    },
+    {
+      "nombre": "Agreeing and disagreeing",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "So do I / Neither can I / I don't either",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Suggestions and advice",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Why don't you...? / You should... / It's important to...",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Requests and favors",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Could you...? / Would you mind...?",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Indirect messages (Tell & Ask)",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Describing changes and experiences",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "I'm not in school anymore / I've bought a new apartment",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "5. Vocabulary by Context",
+      "emoji": "🏆",
+      "completado": false
+    },
+    {
+      "nombre": "Physical appearance and personality",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Food and restaurants",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Ordering at a restaurant (I'd like the veggie burger)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Transport and directions",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "How far is...? / It's about 4,800 km",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Weather and time",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "How cold is Toronto? / It's sunny",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "6. Key Questions",
+      "emoji": "🏆",
+      "completado": false
+    },
+    {
+      "nombre": "WH Questions",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "What does she look like? (appearance) vs. What is she like? (personality)",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Where are you from? / How old are you?",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "How + adjective/adverb",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "How often? / How long? / How well? / How good?",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Questions with 'ever'",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "Do you ever watch TV? / I hardly ever...",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "7. Practical Scenarios",
+      "emoji": "🏆",
+      "completado": false
+    },
+    {
+      "nombre": "In shops/restaurants",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "How much is this? / I'll take the gold earrings",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Giving instructions or information",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "There's a laundromat across from the shopping center",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Talking about plans and goals",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "I plan to take guitar lessons / I hope to get a new job",
+      "emoji": "📖",
+      "completado": false
+    },
+    {
+      "nombre": "Describing preferences",
+      "emoji": "🎓",
+      "completado": false
+    },
+    {
+      "nombre": "I prefer the blue one / Which beer do you like more?",
+      "emoji": "📖",
+      "completado": false
+    }
+]
