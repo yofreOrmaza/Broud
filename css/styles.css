@@ -47,6 +47,27 @@ header {
   transition: opacity 0.5s ease; /* Transición suave */
 }
 
+.swal2-image {
+  object-fit: cover;
+}
+
+.swal2-actions {
+  display: none !important;
+}
+
+.swal2-footer {
+  margin-bottom: 1rem;
+}
+
+.swal2-footer a {
+  background-color: #4635B1;
+  padding: 1rem;
+  color: #FFFFFF;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
 /* Estilo del título */
 #page-title {
   font-size: 1.5rem;

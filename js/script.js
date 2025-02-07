@@ -452,3 +452,16 @@ document.getElementById('step-list-items').addEventListener('dblclick', function
     habilitarEdicionPaso(li, paso, index);
   }
 });
+
+// Ventana modal para información sobre Broud, y enlace a Official Roadmaps
+document.getElementById('logo').addEventListener('click', function () {
+  Swal.fire({
+    title: "BroudAdmin",
+    text: "Information about Broud coming soon",
+    imageUrl: "/data/img/broudadmin.jpg",
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: "Broud Admin",
+    footer: '<a target="_blank" href="/pages/roadmaps.html">Official Roadmaps ↗</a>'
+  });
+});
