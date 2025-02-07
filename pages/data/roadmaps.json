@@ -5,13 +5,8 @@
       "archivo": "/roadmapsJSONs/englishExamA1.json"
     },
     {
-      "nombre": "Ciencia de Datos",
-      "descripcion": "Un roadmap para iniciarse en ciencia de datos.",
-      "archivo": "data/data-science-roadmap.json"
-    },
-    {
-      "nombre": "Diseño UX/UI",
-      "descripcion": "Un roadmap para aprender diseño de interfaces.",
-      "archivo": "data/ux-ui-roadmap.json"
+      "nombre": "BroudAdmin x DeepSeek English A1",
+      "descripcion": "...",
+      "archivo": "/roadmapsJSONs/BroudxDeepseekEnglishA1.json"
     }
   ]

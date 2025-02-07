@@ -61,6 +61,7 @@ main {
 #roadmap-list {
     display: grid;
     gap: 1rem; /* Espacio entre las filas */
+    padding-top: 2rem;
   }
   
   /* Estilo de cada fila (roadmap) */
@@ -69,7 +70,6 @@ main {
     grid-template-columns: 2fr 1fr 1fr 1fr; /* Proporción de columnas */
     align-items: center; /* Alinear verticalmente los elementos */
     background-color: white;
-    border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
   }
@@ -83,11 +83,17 @@ main {
     font-weight: normal; /* Sin negrita */
     color: #4635B1;
     text-decoration: none;
-    cursor: pointer;
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
   }
   
   .roadmap-name:hover {
     text-decoration: underline;
+  }
+
+  .roadmap-name button {
+    cursor: pointer;
   }
   
   /* Botones de acciones */
@@ -115,6 +121,7 @@ main {
     font-size: 0.9rem;
     color: #555;
     text-align: right; /* Alinear a la derecha */
+    padding-right: 1rem;
   }  
 
   /* Estilo para el contenedor del JSON */
