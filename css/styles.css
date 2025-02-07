@@ -50,13 +50,12 @@ header {
 .swal2-image {
   object-fit: cover;
 }
-
-.swal2-actions {
-  display: none !important;
-}
-
 .swal2-footer {
   margin-bottom: 1rem;
+}
+
+.swal2-actions .swal2-confirm, .swal2-styled{
+  background-color: #4635B1;
 }
 
 .swal2-footer a {
