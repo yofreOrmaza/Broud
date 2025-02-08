@@ -56,6 +56,14 @@ function renderizarRuta() {
     // Crear el círculo con el emoji (symbol)
     const circle = document.createElement('div');
     circle.classList.add('circle');
+
+    // Aplicar estilos según el tipo (Topic o Subtopic)
+    if (paso.type === 'topic') {
+      circle.classList.add('topic'); // Clase para Topics
+    } else if (paso.type === 'subtopic') {
+      circle.classList.add('subtopic'); // Clase para Subtopics
+    }
+
     if (paso.done) circle.classList.add('completed');
     circle.textContent = paso.symbol || '?'; // Mostrar el emoji o un símbolo por defecto si no hay emoji
 
@@ -79,9 +87,10 @@ document.getElementById('step-form').addEventListener('submit', function (e) {
   e.preventDefault();
   const stepName = document.getElementById('step-name').value.trim();
   const stepSymbol = document.getElementById('step-symbol').value.trim();
+  const stepType = document.getElementById('step-type').value; // Obtener el tipo seleccionado
 
   if (stepName && stepSymbol) {
-    ruta.push({ name: stepName, symbol: stepSymbol, done: false });
+    ruta.push({ name: stepName, symbol: stepSymbol, done: false, type: stepType });
     guardarEnLocalStorage();
     renderizarRuta();
     document.getElementById('step-name').value = '';

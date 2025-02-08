@@ -162,7 +162,20 @@ header {
   .circle.completed {
     background-color: #4635B1;
   }
-  
+
+  /* Estilo para Topics */
+  .circle.topic {
+    background-color: #000000;
+    color: #FFFFFF;
+    pointer-events: none;
+  }
+
+/* Estilo para Subtopics */
+  /*.circle.subtopic {
+    background-color: #FFC107; /* Color diferente para Subtopics */
+  /*}*/
+
+
   .line {
     width: 2px;
     height: 50px;
