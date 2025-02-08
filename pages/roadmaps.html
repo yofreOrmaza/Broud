@@ -28,11 +28,21 @@
   </header>
 
   <main>
-    <a href="../index.html">Home</a>
+    <a href="../index.html" id="linkToHome">Home</a>
 
+    <div id="csv-to-json-container">
+      <h3>Convert your CSV file from <a target="_blank" href="https://docs.google.com/spreadsheets/u/0/" style="text-decoration: none; color: #4635B1;">google sheets</a> to JSON</h3>
+      <label for="csv-upload" class="custom-file-upload">
+        Select CSV file
+      </label>
+      <input type="file" id="csv-upload" accept=".csv" />
+      <p id="csv-status">No file has been selected.</p>
+    </div>
+
+    <h3 id="title-roadmaps-list">Official Roadmaps</h3>
     <section id="roadmap-list">
         <!-- Los roadmaps se cargarán aquí dinámicamente -->
-        <p>Cargando roadmaps...</p>
+        <p>Loading roadmaps...</p>
     </section>
 
   </main>
@@ -58,14 +68,14 @@
               const newWorker = registration.installing;
               newWorker.addEventListener("statechange", () => {
                 if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
-                  if (confirm("Nueva versión disponible. ¿Actualizar ahora?")) {
+                  if (confirm("New version available, upgrade now?")) {
                     window.location.reload();
                   }
                 }
               });
             });
           })
-          .catch((error) => console.error("Error al registrar:", error));
+          .catch((error) => console.error("Error while registering:", error));
       });
     }
   </script>

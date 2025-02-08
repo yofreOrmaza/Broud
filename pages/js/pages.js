@@ -86,3 +86,101 @@ document.addEventListener('DOMContentLoaded', function () {
     // Cargar los roadmaps al cargar la página
     cargarRoadmaps();
   });
+
+
+// Función para convertir CSV a JSON con soporte para emojis
+function csvToJson(csv) {
+  const lines = csv.split('\n'); // Dividir el CSV en líneas
+  const headers = lines[0].trim().split(','); // Obtener los encabezados (primera fila)
+
+  const result = [];
+  for (let i = 1; i < lines.length; i++) {
+    const currentLine = lines[i].trim();
+    if (currentLine === '') continue; // Ignorar líneas vacías
+
+    const values = currentLine.split(','); // Dividir la línea en valores
+    const obj = {};
+
+    for (let j = 0; j < headers.length; j++) {
+      const header = headers[j].trim(); // Limpiar espacios en blanco
+      let value = values[j]?.trim() || ''; // Manejar valores vacíos
+
+      // Eliminar comillas dobles escapadas si existen
+      if (value.startsWith('"') && value.endsWith('"')) {
+        value = value.slice(1, -1);
+      }
+
+      // Validar y limitar el campo 'emoji' a 2 caracteres
+      if (header === 'emoji') {
+        value = value.substring(0, 7); // Limitar a los primeros 2 caracteres
+      }
+
+      // Asignar el tipo de dato según el encabezado
+      if (header === 'nombre' || header === 'emoji') {
+        obj[header] = value; // Mantener como string (los emojis son Unicode)
+      } else if (header === 'completado') {
+        obj[header] = value.toLowerCase() === 'true'; // Convertir a booleano
+      } else {
+        obj[header] = value; // Por defecto, mantener como string
+      }
+    }
+
+    result.push(obj); // Agregar el objeto al resultado
+  }
+
+  return result;
+}
+
+// Función para descargar el archivo JSON
+function downloadJson(data, filename) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Evento para cargar y convertir un archivo CSV
+document.getElementById('csv-upload').addEventListener('change', function (e) {
+  const file = e.target.files[0];
+  if (!file) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "No file has been selected",
+      timer: 1500,
+      showConfirmButton: false,
+      timerProgressBar: true,
+    });
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function (event) {
+    const csvData = event.target.result;
+    try {
+      const jsonData = csvToJson(csvData);
+      downloadJson(jsonData, 'converted-file.json');
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        text: "File successfully converted and downloaded.",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: false,
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Error converting CSV file. Make sure it is in a valid format.",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+      });
+    }
+  };
+  reader.readAsText(file);
+});
