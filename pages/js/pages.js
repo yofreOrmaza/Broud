@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
         // Nombre del roadmap como enlace
         const nameLink = document.createElement('span');
-        nameLink.textContent = roadmap.nombre;
+        nameLink.textContent = roadmap.name;
         nameLink.classList.add('roadmap-name');
         nameLink.title = 'Ver Roadmap';
         nameLink.addEventListener('click', () => {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-// Función para convertir CSV a JSON con soporte para emojis
+// Función para convertir CSV a JSON con soporte para emojis/symbol
 function csvToJson(csv) {
   const lines = csv.split('\n'); // Dividir el CSV en líneas
   const headers = lines[0].trim().split(','); // Obtener los encabezados (primera fila)
@@ -110,15 +110,15 @@ function csvToJson(csv) {
         value = value.slice(1, -1);
       }
 
-      // Validar y limitar el campo 'emoji' a 2 caracteres
-      if (header === 'emoji') {
+      // Validar y limitar el campo 'symbol' a 2 caracteres
+      if (header === 'symbol') {
         value = value.substring(0, 7); // Limitar a los primeros 2 caracteres
       }
 
       // Asignar el tipo de dato según el encabezado
-      if (header === 'nombre' || header === 'emoji') {
+      if (header === 'name' || header === 'symbol') {
         obj[header] = value; // Mantener como string (los emojis son Unicode)
-      } else if (header === 'completado') {
+      } else if (header === 'done') {
         obj[header] = value.toLowerCase() === 'true'; // Convertir a booleano
       } else {
         obj[header] = value; // Por defecto, mantener como string

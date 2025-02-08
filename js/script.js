@@ -53,11 +53,11 @@ function renderizarRuta() {
   routeContainer.innerHTML = ''; // Limpiar el contenedor antes de renderizar
 
   ruta.forEach((paso, index) => {
-    // Crear el círculo con el emoji
+    // Crear el círculo con el emoji (symbol)
     const circle = document.createElement('div');
     circle.classList.add('circle');
-    if (paso.completado) circle.classList.add('completed');
-    circle.textContent = paso.emoji || '?'; // Mostrar el emoji o un símbolo por defecto si no hay emoji
+    if (paso.done) circle.classList.add('completed');
+    circle.textContent = paso.symbol || '?'; // Mostrar el emoji o un símbolo por defecto si no hay emoji
 
     // Agregar la línea conectora (excepto para el último paso)
     if (index < ruta.length - 1) {
@@ -78,23 +78,23 @@ function renderizarRuta() {
 document.getElementById('step-form').addEventListener('submit', function (e) {
   e.preventDefault();
   const stepName = document.getElementById('step-name').value.trim();
-  const stepEmoji = document.getElementById('step-emoji').value.trim();
+  const stepSymbol = document.getElementById('step-symbol').value.trim();
 
-  if (stepName && stepEmoji) {
-    ruta.push({ nombre: stepName, emoji: stepEmoji, completado: false });
+  if (stepName && stepSymbol) {
+    ruta.push({ name: stepName, symbol: stepSymbol, done: false });
     guardarEnLocalStorage();
     renderizarRuta();
     document.getElementById('step-name').value = '';
-    document.getElementById('step-emoji').value = '';
+    document.getElementById('step-symbol').value = '';
   }
 });
 
-// Marcar un paso como completado
+// Marcar un paso como completado (done)
 document.getElementById('route').addEventListener('click', function (e) {
   const circle = e.target.closest('.circle');
   if (circle) {
     const index = Array.from(circle.parentNode.children).indexOf(circle);
-    ruta[index].completado = !ruta[index].completado;
+    ruta[index].done = !ruta[index].done;
     guardarEnLocalStorage();
     renderizarRuta();
   }
@@ -174,19 +174,19 @@ document.getElementById('step-form').addEventListener('submit', function (e) {
     const stepName = document.getElementById('step-name').value.trim();
   
     if (stepName) {
-      ruta.push({ nombre: stepName, completado: false });
+      ruta.push({ name: stepName, done: false });
       guardarEnLocalStorage(); // Guardar en localStorage
       renderizarRuta();
       document.getElementById('step-name').value = '';
     }
 });
   
-// Marcar un paso como completado
+// Marcar un paso como completado (done)
 document.getElementById('route').addEventListener('click', function (e) {
     const circle = e.target.closest('.circle');
     if (circle) {
       const index = Array.from(circle.parentNode.children).indexOf(circle);
-      ruta[index].completado = !ruta[index].completado;
+      ruta[index].done = !ruta[index].done;
       guardarEnLocalStorage(); // Guardar en localStorage
       renderizarRuta();
     }
@@ -194,25 +194,25 @@ document.getElementById('route').addEventListener('click', function (e) {
 
 // Mostrar el siguiente paso en el contenedor dedicado
 function mostrarSiguientePaso() {
-  const nextStep = ruta.find(paso => !paso.completado); // Buscar el primer paso no completado
-  const nextStepEmoji = document.getElementById('next-step-emoji');
+  const nextStep = ruta.find(paso => !paso.done); // Buscar el primer paso no completado
+  const nextStepSymbol = document.getElementById('next-step-symbol');
   const nextStepText = document.getElementById('next-step-text');
 
   if (nextStep) {
-    nextStepEmoji.textContent = nextStep.emoji;
-    nextStepText.textContent = nextStep.nombre;
+    nextStepSymbol.textContent = nextStep.symbol;
+    nextStepText.textContent = nextStep.name;
   } else {
-    nextStepEmoji.textContent = '🎉'; // Emoji de celebración si no hay más pasos
+    nextStepSymbol.textContent = '🎉'; // Emoji (symbol) de celebración si no hay más pasos
     nextStepText.textContent = 'You\'ve completed all the steps!';
   }
 }
 
-// Marcar un paso como completado
+// Marcar un paso como completado (done)
 document.getElementById('route').addEventListener('click', function (e) {
   const circle = e.target.closest('.circle');
   if (circle) {
     const index = Array.from(circle.parentNode.children).indexOf(circle);
-    ruta[index].completado = !ruta[index].completado;
+    ruta[index].done = !ruta[index].done;
     guardarEnLocalStorage();
     renderizarRuta();
   }
@@ -225,13 +225,13 @@ function renderizarListaCompleta() {
 
   ruta.forEach((paso, index) => {
     const listItem = document.createElement('li');
-    if (paso.completado) listItem.classList.add('completed');
+    if (paso.done) listItem.classList.add('completed');
 
-    const emojiSpan = document.createElement('span');
-    emojiSpan.textContent = paso.emoji || '?';
+    const symbolSpan = document.createElement('span');
+    symbolSpan.textContent = paso.symbol || '?';
 
     const nameSpan = document.createElement('span');
-    nameSpan.textContent = paso.nombre;
+    nameSpan.textContent = paso.name;
 
     // Botón de eliminar
     const deleteBtn = document.createElement('span');
@@ -279,7 +279,7 @@ function renderizarListaCompleta() {
       }
     });*/
 
-    listItem.appendChild(emojiSpan);
+    listItem.appendChild(symbolSpan);
     listItem.appendChild(nameSpan);
     listItem.appendChild(deleteBtn); // Agregar el botón de eliminar
     stepListItems.appendChild(listItem);
@@ -366,16 +366,16 @@ document.addEventListener('DOMContentLoaded', function () {
 // Función para habilitar la edición de un paso
 function habilitarEdicionPaso(li, paso, index) {
   // Crear un contenedor temporal para los campos de edición
-  const inputEmoji = document.createElement('input');
-  inputEmoji.type = 'text';
-  inputEmoji.classList.add('editable');
-  inputEmoji.value = paso.emoji || '?';
-  inputEmoji.maxLength = 2; // Limitar a 2 caracteres para emojis
+  const inputSymbol = document.createElement('input');
+  inputSymbol.type = 'text';
+  inputSymbol.classList.add('editable');
+  inputSymbol.value = paso.symbol || '?';
+  inputSymbol.maxLength = 2; // Limitar a 2 caracteres para emojis (symbol)
 
-  const inputNombre = document.createElement('input');
-  inputNombre.type = 'text';
-  inputNombre.classList.add('editable');
-  inputNombre.value = paso.nombre;
+  const inputName = document.createElement('input');
+  inputName.type = 'text';
+  inputName.classList.add('editable');
+  inputName.value = paso.name;
 
   // Botón para guardar los cambios
   const saveBtn = document.createElement('button');
@@ -385,21 +385,21 @@ function habilitarEdicionPaso(li, paso, index) {
 
   // Limpiar el contenido del elemento <li> y agregar los campos de edición
   li.innerHTML = '';
-  li.appendChild(inputEmoji);
-  li.appendChild(inputNombre);
+  li.appendChild(inputSymbol);
+  li.appendChild(inputName);
   li.appendChild(saveBtn);
 
-  // Enfocar el campo de nombre
-  inputNombre.focus();
+  // Enfocar el campo de nombre (name)
+  inputName.focus();
 
   // Función para guardar los cambios
   function guardarCambios() {
-    const nuevoNombre = inputNombre.value.trim();
-    const nuevoEmoji = inputEmoji.value.trim();
+    const nuevoName = inputName.value.trim();
+    const nuevoSymbol = inputSymbol.value.trim();
 
-    if (nuevoNombre && nuevoEmoji) {
-      ruta[index].nombre = nuevoNombre;
-      ruta[index].emoji = nuevoEmoji;
+    if (nuevoName && nuevoSymbol) {
+      ruta[index].name = nuevoName;
+      ruta[index].symbol = nuevoSymbol;
       guardarEnLocalStorage();
       renderizarRuta();
       renderizarListaCompleta();
@@ -408,7 +408,7 @@ function habilitarEdicionPaso(li, paso, index) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Please provide a valid name and emoji.",
+        text: "Please provide a valid name and emoji/symbol.",
         showConfirmButton: false,
         timer: 2000,
         timerProgressBar: true,
@@ -418,13 +418,13 @@ function habilitarEdicionPaso(li, paso, index) {
   }
 
   // Guardar cambios al presionar "Enter" en cualquiera de los campos
-  inputNombre.addEventListener('keypress', function (e) {
+  inputName.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       guardarCambios();
     }
   });
 
-  inputEmoji.addEventListener('keypress', function (e) {
+  inputSymbol.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       guardarCambios();
     }
