@@ -357,26 +357,40 @@ document.getElementById('toggle-step-list').addEventListener('click', function (
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+  function isMobileDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const stepListItems = document.getElementById('step-list-items');
+
+    // Configuración específica para móviles y escritorio
+    const sortableOptions = isMobileDevice()
+      ? {
+          animation: 150,
+          delay: 300, // Tiempo de espera para activar el arrastre en móviles
+          touchStartThreshold: 10, // Umbral de movimiento antes de considerar un arrastre
+        }
+      : {
+          animation: 150,
+          delay: 0, // Sin tiempo de espera en escritorio
+        };
+
   // Inicializar SortableJS
-  const stepListItems = document.getElementById('step-list-items');
   const sortable = new Sortable(stepListItems, {
-    animation: 150,
+    ...sortableOptions,
     onEnd: function (evt) {
       const { oldIndex, newIndex } = evt;
-
       // Reordenar la ruta en el arreglo
       const movedStep = ruta.splice(oldIndex, 1)[0];
       ruta.splice(newIndex, 0, movedStep);
-
       // Guardar los cambios en localStorage
       guardarEnLocalStorage();
-
       // Actualizar la interfaz
       renderizarRuta();
       renderizarListaCompleta();
       mostrarSiguientePaso();
-    }
+    },
   });
 });
 
