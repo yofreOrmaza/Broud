@@ -205,6 +205,9 @@ header {
       left: 50px;
       transform: translateY(-50%);
     }
+    main #step-list-container {
+      width: 50%;
+    }
   }
 
   @media (min-width: 319px) and (max-width: 767px) {
@@ -342,7 +345,6 @@ header {
   gap: 0.5rem;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
-  color: #555;
 }
 
 #step-list-items li.completed {
@@ -417,4 +419,45 @@ main #form-section #step-form input:focus{
 
 .delete-all-btn:hover {
   background-color: #b71c1c; /* Rojo más oscuro */
+}
+
+/* Estilo para Topics en la lista desplegable */
+.topic-item {
+  display: flex;
+  padding: 0.2rem 0 0.2rem 1rem;
+  background-color: black; /* Fondo negro */
+  color: #FFFFFF;
+}
+
+/* Estilo para Subtopics en la lista desplegable */
+.subtopic-item {
+  padding: 0.2rem 0 0.2rem 1rem;
+  margin-left: 1rem;
+  background-color: #f9f9f9; /* Fondo claro para Subtopics */
+  color: black; /* Texto negro */
+}
+
+.topic-item, .subtopic-item {
+  border-radius: 0.3rem;
+}
+
+@media (min-width: 319px) and (max-width: 767px) {
+  #step-list-items {
+    margin-right: 0.7rem;
+  }
+  /* Estilo general para los elementos de la lista */
+  #step-list-items li {
+    display: flex; /* Habilitar Flexbox */
+    align-items: center; /* Alinear verticalmente los elementos */
+    justify-content: space-between; /* Espacio entre los elementos */
+    padding: 0.5rem;
+    margin-bottom: 0.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .delete-btn {
+    margin-left: auto; /* Empujar el botón hacia la derecha */
+    cursor: pointer;
+    color: red;
+  }
 }

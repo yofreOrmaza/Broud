@@ -234,6 +234,14 @@ function renderizarListaCompleta() {
 
   ruta.forEach((paso, index) => {
     const listItem = document.createElement('li');
+
+    // Aplicar estilos según el tipo (Topic o Subtopic)
+    if (paso.type === 'topic') {
+      listItem.classList.add('topic-item'); // Clase para Topics
+    } else if (paso.type === 'subtopic') {
+      listItem.classList.add('subtopic-item'); // Clase para Subtopics
+    }
+
     if (paso.done) listItem.classList.add('completed');
 
     const symbolSpan = document.createElement('span');
