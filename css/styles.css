@@ -93,7 +93,6 @@ header {
   #step-form {
     display: flex;
     justify-content: center;
-    gap: 1rem;
   }
   
   #step-form input {
@@ -106,13 +105,28 @@ header {
     background-color: #4635B1;
     color: white;
     border: none;
+    border-radius: 0.3rem;
     cursor: pointer;
   }
   
   #step-form button:hover {
     background-color: #3a2a9c;
   }
+
+  #step-form #step-name, #step-form #step-symbol {
+    border: none;
+  }
+
+  #step-form #step-name {
+    border-end-start-radius: 0.3rem;
+    border-end-end-radius: 0.3rem;
+    border-start-end-radius: 0.3rem;
+  }
   
+  #step-form #step-type {
+    outline: none;
+  }
+
   /* Diseño de la ruta */
   #route-container {
     display: grid;
@@ -222,6 +236,7 @@ header {
       display: grid;
       grid-template-columns: repeat(3, auto);
       grid-template-rows: repeat(2, auto);
+      column-gap: 1rem;
     }
     #step-form #step-type {
       grid-column: 1;
@@ -230,7 +245,8 @@ header {
       color: #FFFFFF;
       padding: 0.2rem 0 0.2rem 1rem;
       border-style: none;
-      border-radius: 0.3rem;
+      border-start-start-radius: 0.3rem;
+      border-start-end-radius: 0.3rem;
       width: 50%;
     }
     #step-form #step-name {
@@ -275,8 +291,12 @@ header {
       color: #FFFFFF;
       padding: 0.2rem 0 0.2rem 1rem;
       border-style: none;
-      border-radius: 0.3rem;
+      border-start-start-radius: 0.3rem;
+      border-start-end-radius: 0.3rem;
       width: 50%;
+    }
+    #step-form #step-name {
+      margin-bottom: 1rem;
     }
   }
 
