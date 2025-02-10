@@ -86,8 +86,16 @@ function renderizarRuta() {
 document.getElementById('step-form').addEventListener('submit', function (e) {
   e.preventDefault();
   const stepName = document.getElementById('step-name').value.trim();
-  const stepSymbol = document.getElementById('step-symbol').value.trim();
+  let stepSymbol = document.getElementById('step-symbol').value.trim();
   const stepType = document.getElementById('step-type').value; // Obtener el tipo seleccionado
+  console.log(stepSymbol)
+  if (stepType === "topic") {
+    stepSymbol = "★";
+  } else if (stepType === "subtopic") {
+    stepSymbol = "⍟";
+  } else {
+    stepSymbol = "?";
+  }
 
   if (stepName && stepSymbol) {
     ruta.push({ name: stepName, symbol: stepSymbol, done: false, type: stepType });
