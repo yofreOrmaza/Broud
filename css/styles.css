@@ -507,6 +507,15 @@ main #form-section #step-form input:focus{
   color: #FFFFFF;
 }
 
+li.topic-item {
+  text-decoration: none !important;
+  color: #FFFFFF !important;
+}
+
+li.subtopic-item {
+  color: #000000 !important;
+}
+
 /* Estilo para Subtopics en la lista desplegable */
 .subtopic-item {
   padding: 0.2rem 0 0.2rem 1rem;

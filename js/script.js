@@ -111,7 +111,22 @@ document.getElementById('route').addEventListener('click', function (e) {
   const circle = e.target.closest('.circle');
   if (circle) {
     const index = Array.from(circle.parentNode.children).indexOf(circle);
-    ruta[index].done = !ruta[index].done;
+    const currentStep = ruta[index];
+
+    // Alternar el estado de completado del paso actual
+    currentStep.done = !currentStep.done;
+
+    // Verificar si el paso actual es un subtopic y está completado
+    if (currentStep.type === 'subtopic' && currentStep.done) {
+      // Verificar si el paso anterior es un topic
+      const previousStep = ruta[index - 1];
+      if (previousStep && previousStep.type === 'topic') {
+        // Marcar el topic anterior como completado
+        previousStep.done = true;
+      }
+    }
+
+    // Guardar cambios en localStorage y actualizar la interfaz
     guardarEnLocalStorage();
     renderizarRuta();
   }
@@ -197,17 +212,6 @@ document.getElementById('step-form').addEventListener('submit', function (e) {
       document.getElementById('step-name').value = '';
     }
 });
-  
-// Marcar un paso como completado (done)
-document.getElementById('route').addEventListener('click', function (e) {
-    const circle = e.target.closest('.circle');
-    if (circle) {
-      const index = Array.from(circle.parentNode.children).indexOf(circle);
-      ruta[index].done = !ruta[index].done;
-      guardarEnLocalStorage(); // Guardar en localStorage
-      renderizarRuta();
-    }
-});
 
 // Mostrar el siguiente paso en el contenedor dedicado
 function mostrarSiguientePaso() {
@@ -223,17 +227,6 @@ function mostrarSiguientePaso() {
     nextStepText.textContent = 'You\'ve completed all the steps!';
   }
 }
-
-// Marcar un paso como completado (done)
-document.getElementById('route').addEventListener('click', function (e) {
-  const circle = e.target.closest('.circle');
-  if (circle) {
-    const index = Array.from(circle.parentNode.children).indexOf(circle);
-    ruta[index].done = !ruta[index].done;
-    guardarEnLocalStorage();
-    renderizarRuta();
-  }
-});
 
 // Renderizar la lista completa de pasos en el desplegable
 function renderizarListaCompleta() {
