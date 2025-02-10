@@ -224,6 +224,10 @@ header {
       left: 50px;
       transform: translateY(-50%);
     }
+    main #next-step-container {
+      position: fixed;
+      max-width: 200px;
+    }
     main #step-list-container {
       width: 50%;
     }
@@ -273,6 +277,11 @@ header {
       width: 100%;
       max-width: 320px;
       margin: 0 auto;
+    }
+    main #next-step-container {
+      position: sticky;
+      width: 100%;
+      box-shadow: 0 -1rem #f4f4f9;
     }
     #route-container {
       display: flex;
@@ -325,7 +334,6 @@ header {
 
   /* Estilo para el contenedor del siguiente paso */
 #next-step-container {
-    position: fixed;
     top: 1rem;
     right: 1rem;
     background-color: #fff;
@@ -333,7 +341,6 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    max-width: 200px;
   }
   
   #next-step-container h3 {
@@ -498,6 +505,15 @@ main #form-section #step-form input:focus{
   padding: 0.2rem 0 0.2rem 1rem;
   background-color: black; /* Fondo negro */
   color: #FFFFFF;
+}
+
+li.topic-item {
+  text-decoration: none !important;
+  color: #FFFFFF !important;
+}
+
+li.subtopic-item {
+  color: #000000 !important;
 }
 
 /* Estilo para Subtopics en la lista desplegable */

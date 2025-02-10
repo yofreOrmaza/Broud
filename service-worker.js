@@ -1,4 +1,4 @@
-const CACHE_NAME = "Broud-v1.14"; // Cambia este número en cada nueva versión
+const CACHE_NAME = "Broud-v1.15"; // Cambia este número en cada nueva versión
 const urlsToCache = [
   "/",
   "/index.html",
