@@ -62,6 +62,8 @@ function renderizarRuta() {
       circle.classList.add('topic'); // Clase para Topics
     } else if (paso.type === 'subtopic') {
       circle.classList.add('subtopic'); // Clase para Subtopics
+    } else if (paso.type === 'sub-subtopic') {
+      circle.classList.add('sub-subtopic'); // Clase para Sub-subtopics
     }
 
     if (paso.done) circle.classList.add('completed');
@@ -93,12 +95,15 @@ document.getElementById('step-form').addEventListener('submit', function (e) {
     stepSymbol = "★";
   } else if (stepType === "subtopic") {
     stepSymbol = "⍟";
+  } else if (stepType === "sub-subtopic") {
+    stepSymbol = "•"; // Símbolo para sub-subtopics
   } else {
     stepSymbol = "?";
   }
 
   if (stepName && stepSymbol) {
-    ruta.push({ name: stepName, symbol: stepSymbol, done: false, type: stepType });
+    ruta.push({ name: stepName, symbol: stepSymbol, done: false, type: stepType, children: [] });
+
     guardarEnLocalStorage();
     renderizarRuta();
     document.getElementById('step-name').value = '';
@@ -116,6 +121,18 @@ document.getElementById('route').addEventListener('click', function (e) {
     // Alternar el estado de completado del paso actual
     currentStep.done = !currentStep.done;
 
+    // Lógica para sub-subtopics
+    if (currentStep.type === 'sub-subtopic' && currentStep.done) {
+      const parentSubtopic = ruta.find(paso => paso.children && paso.children.includes(currentStep));
+      if (parentSubtopic) {
+        // Verificar si todos los sub-subtopics del subtopic están completados
+        const allChildrenCompleted = parentSubtopic.children.every(child => child.done);
+        if (allChildrenCompleted) {
+          parentSubtopic.done = true; // Marcar el subtopic como completado
+        }
+      }
+    }
+
     // Verificar si el paso actual es un subtopic y está completado
     if (currentStep.type === 'subtopic' && currentStep.done) {
       // Verificar si el paso anterior es un topic
@@ -123,6 +140,14 @@ document.getElementById('route').addEventListener('click', function (e) {
       if (previousStep && previousStep.type === 'topic') {
         // Marcar el topic anterior como completado
         previousStep.done = true;
+      }
+    }
+
+    // Lógica para topics (si un subtopic sin hijos está completado)
+    if (currentStep.type === 'subtopic' && currentStep.done && !currentStep.children?.length) {
+      const previousStep = ruta[index - 1];
+      if (previousStep && previousStep.type === 'topic') {
+        previousStep.done = true; // Marcar el topic anterior como completado
       }
     }
 
@@ -241,6 +266,8 @@ function renderizarListaCompleta() {
       listItem.classList.add('topic-item'); // Clase para Topics
     } else if (paso.type === 'subtopic') {
       listItem.classList.add('subtopic-item'); // Clase para Subtopics
+    } else if (paso.type === 'sub-subtopic') {
+      listItem.classList.add('sub-subtopic-item'); // Clase para Subtopics
     }
 
     if (paso.done) listItem.classList.add('completed');

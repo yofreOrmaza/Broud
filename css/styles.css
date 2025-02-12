@@ -307,7 +307,7 @@ header {
       border-style: none;
       border-start-start-radius: 0.3rem;
       border-start-end-radius: 0.3rem;
-      width: 50%;
+      width: 65%;
     }
     #step-form #step-name {
       margin-bottom: 1rem;
@@ -515,11 +515,20 @@ li.topic-item {
 li.subtopic-item {
   color: #000000 !important;
 }
+li.sub-subtopic-item {
+  color: #000000 !important;
+}
 
 /* Estilo para Subtopics en la lista desplegable */
 .subtopic-item {
   padding: 0.2rem 0 0.2rem 1rem;
   margin-left: 1rem;
+  background-color: #f9f9f9; /* Fondo claro para Subtopics */
+  color: black; /* Texto negro */
+}
+.sub-subtopic-item {
+  padding: 0.2rem 0 0.2rem 1rem;
+  margin-left: 2rem;
   background-color: #f9f9f9; /* Fondo claro para Subtopics */
   color: black; /* Texto negro */
 }
