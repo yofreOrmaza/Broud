@@ -13,9 +13,17 @@
 Design the path to your purpose through short and concrete steps<br>Broud is available on your devices 📱💻 🖥️
 
 # Broud
+<div align="left">
+  <h3>Broud desktop version</h3>
+</div>
 
-<img alt="Broud Logo" src="https://github.com/user-attachments/assets/656936d8-384d-4bec-8182-a67fe6a710dd" width="30%" height="30%">
-<img alt="Broud Logo" src="https://github.com/user-attachments/assets/45ede2ca-7e87-42c6-b6a4-73ff086a97e2" width="60%" height="30%">
+<img alt="Broud Logo" src="https://github.com/user-attachments/assets/45ede2ca-7e87-42c6-b6a4-73ff086a97e2" width="100%" height="auto">
+
+<br>
+<div align="left">
+  <h3>Broud mobile version</h3>
+  <img alt="Broud Logo" src="https://github.com/user-attachments/assets/656936d8-384d-4bec-8182-a67fe6a710dd" width="30%" height="30%">
+</div>
 
 </div>
 
