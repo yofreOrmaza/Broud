@@ -22,7 +22,7 @@ Design the path to your purpose through short and concrete steps<br>Broud is ava
 <br>
 <div align="left">
   <h3>Broud mobile version</h3>
-  <img alt="Broud Logo" src="https://github.com/user-attachments/assets/656936d8-384d-4bec-8182-a67fe6a710dd" width="30%" height="30%">
+  <img alt="Broud Logo" src="https://github.com/user-attachments/assets/656936d8-384d-4bec-8182-a67fe6a710dd" width="45%" height="auto">
 </div>
 
 </div>
